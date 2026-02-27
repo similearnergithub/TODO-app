@@ -1,0 +1,58 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: todo-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "mongodb://user:password@localhost:27017/admin?authSource=admin", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - todo-network
+
+  backend:
+    build: ./server
+    container_name: todo-backend
+    ports:
+      - "5001:5000"
+    env_file:
+      - ./server/.env
+    environment:
+      MONGODB_URI: mongodb://user:password@mongo:27017/todo-app?authSource=admin
+      NODE_ENV: production
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - todo-network
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+
+  frontend:
+    build:
+      context: ./client
+      args:
+        VITE_API_URL: http://localhost:5001/api
+    container_name: todo-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - todo-network
+
+volumes:
+  mongo-data:
+
+networks:
+  todo-network:
+    driver: bridge
