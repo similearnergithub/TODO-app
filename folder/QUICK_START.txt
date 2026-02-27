@@ -1,0 +1,110 @@
+================================================================================
+🚀 QUICK START - TODO LIST APPLICATION
+================================================================================
+
+⏱️  FASTEST WAY TO RUN (2 Minutes):
+
+1. GET GROQ API KEY
+   - Go to: https://console.groq.com
+   - Copy your API key (starts with gsk_)
+
+2. ADD TO PROJECT
+   - Open: server/.env
+   - Find: GROQ_API_KEY=
+   - Paste your key there
+
+3. START APPLICATION
+   Option A (Docker - Easiest):
+   - docker-compose up --build
+   - Open: http://localhost:3000
+
+   Option B (Manual):
+   - Terminal 1: cd server && npm install && npm run dev
+   - Terminal 2: cd client && npm install && npm run dev
+   - Open: http://localhost:3000
+
+4. TEST
+   - Register new account
+   - Create a task
+   - Mark as complete
+   - Click "📊 Generate Daily Summary"
+   - See AI summary appear!
+
+================================================================================
+
+📋 KEY FILES TO KNOW:
+
+WHERE GROQ API KEY GOES:
+  👉 server/.env  (Line: GROQ_API_KEY=your_key_here)
+
+WHERE GROQ IS USED:
+  👉 server/routes/summary.js (Line 23 - API call)
+
+WHERE FRONTEND CALLS IT:
+  👉 client/src/pages/Dashboard.jsx (handleGenerateSummary function)
+
+================================================================================
+
+🎯 DEFAULT CREDENTIALS FOR TESTING:
+
+Login Details:
+  Email: test@example.com
+  Password: (whatever you register with)
+
+API Endpoints:
+  Backend: http://localhost:5000/api
+  Frontend: http://localhost:3000
+
+Database:
+  MongoDB: mongodb://localhost:27017/todo-app
+  (or MongoDB Atlas URI in .env)
+
+================================================================================
+
+✅ WHAT WORKS OUT OF THE BOX:
+
+✓ User registration & login
+✓ Create/Edit/Delete tasks
+✓ Task grouping (Today, Upcoming, Completed)
+✓ Task priority levels
+✓ AI summaries via Groq
+✓ Beautiful responsive UI
+✓ Docker containers ready
+
+================================================================================
+
+⚠️  IF SOMETHING DOESN'T WORK:
+
+❌ "GROQ API Error"
+   ✓ Check key is correct
+   ✓ Check key starts with 'gsk_'
+   ✓ Check internet connection
+
+❌ "Cannot connect to MongoDB"
+   ✓ Install MongoDB locally, or
+   ✓ Use MongoDB Atlas (cloud)
+   ✓ Update MONGODB_URI in server/.env
+
+❌ "Port already in use"
+   ✓ Change PORT in server/.env
+   ✓ Change port in docker-compose.yml
+
+❌ "Module not found"
+   ✓ Run: npm install (in server and client folders)
+
+================================================================================
+
+📚 DOCUMENTATION:
+
+README.md           - Complete project documentation
+GROQ_SETUP.md       - Detailed Groq API setup
+PROJECT_SUMMARY.md  - What was built
+.env.example        - Example environment variables
+
+================================================================================
+
+🎉 YOU'RE ALL SET! Submit this project with confidence! 🎉
+
+Questions? Check README.md or GROQ_SETUP.md
+
+================================================================================
