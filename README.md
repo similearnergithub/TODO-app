@@ -1,4 +1,3 @@
-# TODO-app
 
 # 📋 ToDo List Application
 
@@ -17,7 +16,7 @@ A full-stack ToDo List application built with React, Node.js, Express, and Mongo
 
 ## 🚀 Quick Start
 
-### Option 1: Using Docker (Recommended)
+### Option 1: Using Docker 
 
 1. **Clone the repository**
    ```bash
