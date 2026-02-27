@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # TODO-app
-tbrt
 =======
 # 📋 ToDo List Application
 
