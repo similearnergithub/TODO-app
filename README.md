@@ -278,15 +278,7 @@ Tasks are automatically grouped into:
 - Change port in `.env` and docker-compose
 - Or kill existing process on that port
 
-## 📄 License
 
-This project is free to use for personal and educational purposes.
-
-## 👨‍💻 Support
-
-For issues or questions, check the project structure and environment variables are set correctly.
 
 ---
 
-**Happy Task Managing! 🚀**
->>>>>>> 54d8346 (Initial commit)
