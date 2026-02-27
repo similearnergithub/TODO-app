@@ -1,5 +1,5 @@
 # TODO-app
-=======
+
 # 📋 ToDo List Application
 
 A full-stack ToDo List application built with React, Node.js, Express, and MongoDB with AI-powered daily summaries using Groq API.
